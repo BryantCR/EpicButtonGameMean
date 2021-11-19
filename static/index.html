@@ -8,7 +8,7 @@
     </head>
     <body>
         <main>
-            <form class="epic" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="epic" style="display: flex; flex-direction: column; align-items: center;">
                 <h1>
                     Epic button game
                 </h1>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="message">
                     <h1 id="numCounter" >
-                        0
+                        <span id="value">0</span>
                     </h1>
                 </div>
                 <div style="display: flex; flex-direction: column;">
@@ -30,7 +30,13 @@
                         Reset
                     </button>
                 </div>
-            </form>
+            </div>
         </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+        <!-- !socket.io script-->
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script> 
+        <script src="/js/main.js"></script>
     </body>
 </html>

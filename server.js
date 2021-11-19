@@ -7,20 +7,23 @@ app.set('views', __dirname + "/views");
 
 const server = app.listen(8080, function(){
     console.log('Server with socket.io')
-})
+});
 const io = require('socket.io')(server);
 
-app.get('/', function(req, res){
+app.get('/test', function(req, res){
     res.render('index');
 });
 
 io.on( 'connection' , function( socket ){
 	console.log("You have reached the server, welcome!");
 
+    /*socket.on('information', function(info){
+        socket.emit('displayInformation', info)
+        console.log(info);
+    });*/
 
-
-    io.socket.on('count' , function(counter){
+    socket.on('count' , function(counter){
 		io.sockets.emit('listenAll', counter)
 	});
 
-})
+});

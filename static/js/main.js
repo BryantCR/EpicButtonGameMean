@@ -5,12 +5,13 @@ let counter = 0;
 
 $('#addOne').on('click', function(event){
     event.preventDefault();
+    counter;
     counter++;
     socket.emit('count', counter)
 })
 
 socket.on('listenAll', function(counter){
-    $('#numCounter').html(counter)
+    $('#value').html(counter)
 });
 
 $('#reset').on('click', function(event){
